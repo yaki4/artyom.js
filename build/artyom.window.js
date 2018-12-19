@@ -11,10 +11,11 @@
  */
 /// <reference path="artyom.d.ts" />
 // Remove "export default " keywords if willing to build with `npm run artyom-build-window`
-var Artyom = (function () {
+var Artyom = /** @class */ (function () {
     // Triggered at the declaration of 
     function Artyom() {
         this.ArtyomCommands = [];
+        this.ArtyomspeechingText = null;
         this.ArtyomVoicesIdentifiers = {
             // German
             "de-DE": ["Google Deutsch", "de-DE", "de_DE"],
@@ -186,7 +187,13 @@ var Artyom = (function () {
                     console.log("%c" + preMessage + ":%c " + message, 'background: #4285F4; color: #FFFFFF', 'color:black;');
                     break;
                 default:
-                    console.log("%c" + preMessage + ":%c " + message, 'background: #005454; color: #BFF8F8', 'color:black;');
+                    var temp = message.substring(0, 2);
+                    if (temp === '>>') {
+                        this.ArtyomspeechingText = message.substring(3, message.length);
+                    }
+                    else if (message.substring(0, 14) === 'Normal mode : ') {
+                        this.ArtyomspeechingText = message.substring(14, message.length);
+                    }
                     break;
             }
         }

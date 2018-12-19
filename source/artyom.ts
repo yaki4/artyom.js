@@ -12,7 +12,7 @@
 
 /// <reference path="artyom.d.ts" />
 // Remove "export default " keywords if willing to build with `npm run artyom-build-window`
-export default class Artyom {
+class Artyom {
     /**
      * Stores an object with all the available (or desired) voices for WebkitSpeechSynthesis
      */
