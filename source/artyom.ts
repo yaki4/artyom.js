@@ -34,6 +34,10 @@ export default class Artyom {
     private ArtyomCommands : Array<ArtyomCommand>;
 
     /**
+     * Custom variable for getting speech
+     */
+    private ArtyomspeechingText : Object;
+    /**
      * Due to problems with the javascript garbage collector the SpeechSynthesisUtterance object
      * onEnd event doesn't get triggered sometimes. Therefore we need to keep the reference of the
      * object inside this global array variable.
@@ -65,7 +69,7 @@ export default class Artyom {
     // Triggered at the declaration of 
     constructor() {
         this.ArtyomCommands = [];
-        
+        this.ArtyomspeechingText = null;
         this.ArtyomVoicesIdentifiers = {
             // German
             "de-DE": ["Google Deutsch","de-DE","de_DE"],
@@ -258,11 +262,12 @@ export default class Artyom {
                     );
                     break;
                 default:
-                    console.log(
-                        `%c${preMessage}:%c ${message}`,
-                        'background: #005454; color: #BFF8F8', 
-                        'color:black;'
-                    );
+                    let temp = message.substring(0,2);
+                    if (temp === '>>') {
+                        this.ArtyomspeechingText = message.substring(3, message.length);
+                    } else if (message.substring(0, 14) === 'Normal mode : ') { 
+                        this.ArtyomspeechingText = message.substring(14, message.length);    
+                    }
                     break;
             }
         }
