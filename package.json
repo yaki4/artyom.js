@@ -1,34 +1,35 @@
 {
-    "name": "artyom.js",
-    "version": "1.0.6",
-    "description": "fork of artyom for last sentence",
-    "main": "build/artyom.js",
-    "typings": "source/artyom.d.ts",
-    "scripts": {
-        "build-artyom-module": "tsc --p ./source/commonjs",
-        "build-artyom-window": "tsc --p ./source/window"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/yaki4/artyom.js.git"
-    },
-    "keywords": [
-        "speech",
-        "recognition",
-        "voice",
-        "commands",
-        "voice",
-        "siri",
-        "cortana",
-        "googleNow"
-    ],
-    "author": "Carlos Delgado",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/yaki4/artyom.js/issues"
-    },
-    "homepage": "https://sdkcarlos.github.io/sites/artyom.html",
-    "dependencies": {
-        "typescript": "^3.2.2"
-    }
+  "name": "artyom-lichen",
+  "version": "1.0.6",
+  "description": "fork of artyom for last sentence",
+  "main": "build/artyom.js",
+  "typings": "source/artyom.d.ts",
+  "scripts": {
+    "build-artyom-module": "tsc --p ./source/commonjs",
+    "build-artyom-window": "tsc --p ./source/window"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaki4/artyom.js.git"
+  },
+  "keywords": [
+    "speech",
+    "recognition",
+    "voice",
+    "commands",
+    "voice",
+    "siri",
+    "cortana",
+    "googleNow"
+  ],
+  "author": "Carlos Delgado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaki4/artyom.js/issues"
+  },
+  "homepage": "https://sdkcarlos.github.io/sites/artyom.html",
+  "dependencies": {
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {}
 }
